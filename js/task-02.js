@@ -9,10 +9,14 @@ const ingredients = [
 
 const ingredientsList = document.querySelector("#ingredients");
 
+const fragment = document.createDocumentFragment();
+
 ingredients.forEach((ingredient) => {
   const listItem = document.createElement("li");
   listItem.classList.add("item");
   listItem.textContent = ingredient;
 
-  ingredientsList.appendChild(listItem);
+  fragment.appendChild(listItem);
 });
+
+ingredientsList.appendChild(fragment);
